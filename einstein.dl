@@ -1,0 +1,813 @@
+# https://web.stanford.edu/~laurik/fsmbook/examples/Einstein%27sPuzzle.html
+
+# Rules in nationality, house, pet, smokes, drinks
+
+# 1. The Englishman lives in the red house.
+rule( \
+  'Englishman', 'red', C1, D1, E1, \
+  A2 <> 'Englishman', B2 <> 'red', C2, D2, E2, \
+  A3 <> 'Englishman', B3 <> 'red', C3, D3, E3, \
+  A4 <> 'Englishman', B4 <> 'red', C4, D4, E4, \
+  A5 <> 'Englishman', B5 <> 'red', C5, D5, E5 \
+).
+rule( \
+  A2 <> 'Englishman', B2 <> 'red', C2, D2, E2, \
+  'Englishman', 'red', C1, D1, E1, \
+  A3 <> 'Englishman', B3 <> 'red', C3, D3, E3, \
+  A4 <> 'Englishman', B4 <> 'red', C4, D4, E4, \
+  A5 <> 'Englishman', B5 <> 'red', C5, D5, E5 \
+).
+rule( \
+  A2 <> 'Englishman', B2 <> 'red', C2, D2, E2, \
+  A3 <> 'Englishman', B3 <> 'red', C3, D3, E3, \
+  'Englishman', 'red', C1, D1, E1, \
+  A4 <> 'Englishman', B4 <> 'red', C4, D4, E4, \
+  A5 <> 'Englishman', B5 <> 'red', C5, D5, E5 \
+).
+rule( \
+  A2 <> 'Englishman', B2 <> 'red', C2, D2, E2, \
+  A3 <> 'Englishman', B3 <> 'red', C3, D3, E3, \
+  A4 <> 'Englishman', B4 <> 'red', C4, D4, E4, \
+  'Englishman', 'red', C1, D1, E1, \
+  A5 <> 'Englishman', B5 <> 'red', C5, D5, E5 \
+).
+rule( \
+  A2 <> 'Englishman', B2 <> 'red', C2, D2, E2, \
+  A3 <> 'Englishman', B3 <> 'red', C3, D3, E3, \
+  A4 <> 'Englishman', B4 <> 'red', C4, D4, E4, \
+  A5 <> 'Englishman', B5 <> 'red', C5, D5, E5, \
+  'Englishman', 'red', C1, D1, E1 \
+).
+
+# 2. The Swede keeps dogs.
+rule( \
+  'Swede', B1, 'dogs', D1, E1, \
+  A2 <> 'Swede', B2, C2 <> 'dogs', D2, E2, \
+  A3 <> 'Swede', B3, C3 <> 'dogs', D3, E3, \
+  A4 <> 'Swede', B4, C4 <> 'dogs', D4, E4, \
+  A5 <> 'Swede', B5, C5 <> 'dogs', D5, E5 \
+).
+rule( \
+  A2 <> 'Swede', B2, C2 <> 'dogs', D2, E2, \
+  'Swede', B1, 'dogs', D1, E1, \
+  A3 <> 'Swede', B3, C3 <> 'dogs', D3, E3, \
+  A4 <> 'Swede', B4, C4 <> 'dogs', D4, E4, \
+  A5 <> 'Swede', B5, C5 <> 'dogs', D5, E5 \
+).
+rule( \
+  A2 <> 'Swede', B2, C2 <> 'dogs', D2, E2, \
+  A3 <> 'Swede', B3, C3 <> 'dogs', D3, E3, \
+  'Swede', B1, 'dogs', D1, E1, \
+  A4 <> 'Swede', B4, C4 <> 'dogs', D4, E4, \
+  A5 <> 'Swede', B5, C5 <> 'dogs', D5, E5 \
+).
+rule( \
+  A2 <> 'Swede', B2, C2 <> 'dogs', D2, E2, \
+  A3 <> 'Swede', B3, C3 <> 'dogs', D3, E3, \
+  A4 <> 'Swede', B4, C4 <> 'dogs', D4, E4, \
+  'Swede', B1, 'dogs', D1, E1, \
+  A5 <> 'Swede', B5, C5 <> 'dogs', D5, E5 \
+).
+rule( \
+  A2 <> 'Swede', B2, C2 <> 'dogs', D2, E2, \
+  A3 <> 'Swede', B3, C3 <> 'dogs', D3, E3, \
+  A4 <> 'Swede', B4, C4 <> 'dogs', D4, E4, \
+  A5 <> 'Swede', B5, C5 <> 'dogs', D5, E5, \
+  'Swede', B1, 'dogs', C1, D1, E1 \
+).
+
+# 3. The Dane drinks tea.
+rule( \
+  'Dane', B1, C1, D1, 'tea', \
+  A2 <> 'Dane', B2, C2, D2, E2 <> 'tea', \
+  A3 <> 'Dane', B3, C3, D3, E3 <> 'tea', \
+  A4 <> 'Dane', B4, C4, D4, E4 <> 'tea', \
+  A5 <> 'Dane', B5, C5, D5, E5 <> 'tea' \
+).
+rule( \
+  A2 <> 'Dane', B2, C2, D2, E2 <> 'tea', \
+  'Dane', B1, C1, D1, 'tea', \
+  A3 <> 'Dane', B3, C3, D3, E3 <> 'tea', \
+  A4 <> 'Dane', B4, C4, D4, E4 <> 'tea', \
+  A5 <> 'Dane', B5, C5, D5, E5 <> 'tea' \
+).
+rule( \
+  A2 <> 'Dane', B2, C2, D2, E2 <> 'tea', \
+  A3 <> 'Dane', B3, C3, D3, E3 <> 'tea', \
+  'Dane', B1, C1, D1, 'tea', \
+  A4 <> 'Dane', B4, C4, D4, E4 <> 'tea', \
+  A5 <> 'Dane', B5, C5, D5, E5 <> 'tea' \
+).
+rule( \
+  A2 <> 'Dane', B2, C2, D2, E2 <> 'tea', \
+  A3 <> 'Dane', B3, C3, D3, E3 <> 'tea', \
+  A4 <> 'Dane', B4, C4, D4, E4 <> 'tea', \
+  'Dane', B1, C1, D1, 'tea', \
+  A5 <> 'Dane', B5, C5, D5, E5 <> 'tea' \
+).
+rule( \
+  A2 <> 'Dane', B2, C2, D2, E2 <> 'tea', \
+  A3 <> 'Dane', B3, C3, D3, E3 <> 'tea', \
+  A4 <> 'Dane', B4, C4, D4, E4 <> 'tea', \
+  A5 <> 'Dane', B5, C5, D5, E5 <> 'tea', \
+  'Dane', B1, C1, D1, 'tea' \
+).
+
+# 4. The green house is just to the left of the white one.
+rule( \
+  A1, 'green', C1, D1, E1, \
+  A2, 'white', C2, D2, E2, \
+  A3, B3 <> 'green', C3, D3, E3, \
+  A4, B4 <> 'green', C4, D4, E4, \
+  A5, B5 <> 'green', C5, D5, E5 \
+) :- neq(B3, 'white', O1), neq(B4, 'white', O2), neq(B5, 'white', O3).
+rule( \
+  A3, B3 <> 'green', C3, D3, E3, \
+  A1, 'green', C1, D1, E1, \
+  A2, 'white', C2, D2, E2, \
+  A4, B4 <> 'green', C4, D4, E4, \
+  A5, B5 <> 'green', C5, D5, E5 \
+) :- neq(B3, 'white', O1), neq(B4, 'white', O2), neq(B5, 'white', O3).
+rule( \
+  A3, B3 <> 'green', C3, D3, E3, \
+  A4, B4 <> 'green', C4, D4, E4, \
+  A1, 'green', C1, D1, E1, \
+  A2, 'white', C2, D2, E2, \
+  A5, B5 <> 'green', C5, D5, E5 \
+) :- neq(B3, 'white', O1), neq(B4, 'white', O2), neq(B5, 'white', O3).
+rule( \
+  A3, B3 <> 'green', C3, D3, E3, \
+  A4, B4 <> 'green', C4, D4, E4, \
+  A5, B5 <> 'green', C5, D5, E5, \
+  A1, 'green', C1, D1, E1, \
+  A2, 'white', C2, D2, E2 \
+) :- neq(B3, 'white', O1), neq(B4, 'white', O2), neq(B5, 'white', O3).
+
+# 5. The owner of the green house drinks coffee.
+rule( \
+  A1, 'green', C1, D1, 'coffee', \
+  A2, B2 <> 'green', C2, D2, E2 <> 'coffee', \
+  A3, B3 <> 'green', C3, D3, E3 <> 'coffee', \
+  A4, B4 <> 'green', C4, D4, E4 <> 'coffee', \
+  A5, B5 <> 'green', C5, D5, E5 <> 'coffee' \
+).
+rule( \
+  A2, B2 <> 'green', C2, D2, E2 <> 'coffee', \
+  A1, 'green', C1, D1, 'coffee', \
+  A3, B3 <> 'green', C3, D3, E3 <> 'coffee', \
+  A4, B4 <> 'green', C4, D4, E4 <> 'coffee', \
+  A5, B5 <> 'green', C5, D5, E5 <> 'coffee' \
+).
+rule( \
+  A2, B2 <> 'green', C2, D2, E2 <> 'coffee', \
+  A3, B3 <> 'green', C3, D3, E3 <> 'coffee', \
+  A1, 'green', C1, D1, 'coffee', \
+  A4, B4 <> 'green', C4, D4, E4 <> 'coffee', \
+  A5, B5 <> 'green', C5, D5, E5 <> 'coffee' \
+).
+rule( \
+  A2, B2 <> 'green', C2, D2, E2 <> 'coffee', \
+  A3, B3 <> 'green', C3, D3, E3 <> 'coffee', \
+  A4, B4 <> 'green', C4, D4, E4 <> 'coffee', \
+  A1, 'green', C1, D1, 'coffee', \
+  A5, B5 <> 'green', C5, D5, E5 <> 'coffee' \
+).
+rule( \
+  A2, B2 <> 'green', C2, D2, E2 <> 'coffee', \
+  A3, B3 <> 'green', C3, D3, E3 <> 'coffee', \
+  A4, B4 <> 'green', C4, D4, E4 <> 'coffee', \
+  A5, B5 <> 'green', C5, D5, E5 <> 'coffee', \
+  A1, 'green', C1, D1, 'coffee' \
+).
+
+# 6. The Pall Mall smoker keeps birds.
+rule( \
+  A1, B1, 'birds', 'Pall Mall', E1, \
+  A2, B2, C2 <> 'birds', D2 <> 'Pall Mall', E2, \
+  A3, B3, C3 <> 'birds', D3 <> 'Pall Mall', E3, \
+  A4, B4, C4 <> 'birds', D4 <> 'Pall Mall', E4, \
+  A5, B5, C5 <> 'birds', D5 <> 'Pall Mall', E5 \
+).
+rule( \
+  A2, B2, C2 <> 'birds', D2 <> 'Pall Mall', E2, \
+  A1, B1, 'birds', 'Pall Mall', E1, \
+  A3, B3, C3 <> 'birds', D3 <> 'Pall Mall', E3, \
+  A4, B4, C4 <> 'birds', D4 <> 'Pall Mall', E4, \
+  A5, B5, C5 <> 'birds', D5 <> 'Pall Mall', E5 \
+).
+rule( \
+  A2, B2, C2 <> 'birds', D2 <> 'Pall Mall', E2, \
+  A3, B3, C3 <> 'birds', D3 <> 'Pall Mall', E3, \
+  A1, B1, 'birds', 'Pall Mall', E1, \
+  A4, B4, C4 <> 'birds', D4 <> 'Pall Mall', E4, \
+  A5, B5, C5 <> 'birds', D5 <> 'Pall Mall', E5 \
+).
+rule( \
+  A2, B2, C2 <> 'birds', D2 <> 'Pall Mall', E2, \
+  A3, B3, C3 <> 'birds', D3 <> 'Pall Mall', E3, \
+  A4, B4, C4 <> 'birds', D4 <> 'Pall Mall', E4, \
+  A1, B1, 'birds', 'Pall Mall', E1, \
+  A5, B5, C5 <> 'birds', D5 <> 'Pall Mall', E5 \
+).
+rule( \
+  A2, B2, C2 <> 'birds', D2 <> 'Pall Mall', E2, \
+  A3, B3, C3 <> 'birds', D3 <> 'Pall Mall', E3, \
+  A4, B4, C4 <> 'birds', D4 <> 'Pall Mall', E4, \
+  A5, B5, C5 <> 'birds', D5 <> 'Pall Mall', E5, \
+  A1, B1, 'birds', 'Pall Mall', E1 \
+).
+
+# 7. The owner of the yellow house smokes Dunhills.
+rule( \
+  A1, 'yellow', C1, 'Dunhills', E1, \
+  A2, B2 <> 'yellow', C2, D2 <> 'Dunhills', E2, \
+  A3, B3 <> 'yellow', C3, D3 <> 'Dunhills', E3, \
+  A4, B4 <> 'yellow', C4, D4 <> 'Dunhills', E4, \
+  A5, B5 <> 'yellow', C5, D5 <> 'Dunhills', E5 \
+).
+rule( \
+  A2, B2 <> 'yellow', C2, D2 <> 'Dunhills', E2, \
+  A1, 'yellow', C1, 'Dunhills', E1, \
+  A3, B3 <> 'yellow', C3, D3 <> 'Dunhills', E3, \
+  A4, B4 <> 'yellow', C4, D4 <> 'Dunhills', E4, \
+  A5, B5 <> 'yellow', C5, D5 <> 'Dunhills', E5 \
+).
+rule( \
+  A2, B2 <> 'yellow', C2, D2 <> 'Dunhills', E2, \
+  A3, B3 <> 'yellow', C3, D3 <> 'Dunhills', E3, \
+  A1, 'yellow', C1, 'Dunhills', E1, \
+  A4, B4 <> 'yellow', C4, D4 <> 'Dunhills', E4, \
+  A5, B5 <> 'yellow', C5, D5 <> 'Dunhills', E5 \
+).
+rule( \
+  A2, B2 <> 'yellow', C2, D2 <> 'Dunhills', E2, \
+  A3, B3 <> 'yellow', C3, D3 <> 'Dunhills', E3, \
+  A4, B4 <> 'yellow', C4, D4 <> 'Dunhills', E4, \
+  A1, 'yellow', C1, 'Dunhills', E1, \
+  A5, B5 <> 'yellow', C5, D5 <> 'Dunhills', E5 \
+).
+rule( \
+  A2, B2 <> 'yellow', C2, D2 <> 'Dunhills', E2, \
+  A3, B3 <> 'yellow', C3, D3 <> 'Dunhills', E3, \
+  A4, B4 <> 'yellow', C4, D4 <> 'Dunhills', E4, \
+  A5, B5 <> 'yellow', C5, D5 <> 'Dunhills', E5, \
+  A1, 'yellow', C1, 'Dunhills', E1 \
+).
+
+# 8. The man in the center house drinks milk.
+rule( \
+  A1, B1, C1, D1, E1 <> 'milk', \
+  A2, B2, C2, D2, E2 <> 'milk', \
+  A3, B3, C3, D3, 'milk', \
+  A4, B4, C4, D4, E4 <> 'milk', \
+  A5, B5, C5, D5, E5 <> 'milk' \
+).
+
+# 9. The Norwegian lives in the first house.
+rule( \
+  'Norwegian', B1, C1, D1, E1, \
+  A2 <> 'Norwegian', B2, C2, D2, E2, \
+  A3 <> 'Norwegian', B3, C3, D3, E3, \
+  A4 <> 'Norwegian', B4, C4, D4, E4, \
+  A5 <> 'Norwegian', B5, C5, D5, E5 \
+).
+rule( \
+  A2 <> 'Norwegian', B2, C2, D2, E2, \
+  A3 <> 'Norwegian', B3, C3, D3, E3, \
+  A4 <> 'Norwegian', B4, C4, D4, E4, \
+  A5 <> 'Norwegian', B5, C5, D5, E5, \
+  'Norwegian', B1, C1, D1, E1 \
+).
+
+# 10. The Blend smoker has a neighbor who keeps cats.
+rule( \
+  A1, B1, C1 <> 'cats', 'Blend', E1, \
+  A2, B2, 'cats', D2 <> 'Blend', E2, \
+  A3, B3, C3 <> 'cats', D3, E3 <> 'Blend', \
+  A4, B4, C4 <> 'cats', D4, E4 <> 'Blend', \
+  A5, B5, C5 <> 'cats', D5, E5 <> 'Blend' \
+).
+rule( \
+  A3, B3, C3 <> 'cats', D3, E3 <> 'Blend', \
+  A1, B1, C1 <> 'cats', 'Blend', E1, \
+  A2, B2, 'cats', D2 <> 'Blend', E2, \
+  A4, B4, C4 <> 'cats', D4, E4 <> 'Blend', \
+  A5, B5, C5 <> 'cats', D5, E5 <> 'Blend' \
+).
+rule( \
+  A2, B2, 'cats', D2 <> 'Blend', E2, \
+  A1, B1, C1 <> 'cats', 'Blend', E1, \
+  A3, B3, C3 <> 'cats', D3, E3 <> 'Blend', \
+  A4, B4, C4 <> 'cats', D4, E4 <> 'Blend', \
+  A5, B5, C5 <> 'cats', D5, E5 <> 'Blend' \
+).
+rule( \
+  A3, B3, C3 <> 'cats', D3, E3 <> 'Blend', \
+  A4, B4, C4 <> 'cats', D4, E4 <> 'Blend', \
+  A1, B1, C1 <> 'cats', 'Blend', E1, \
+  A2, B2, 'cats', D2 <> 'Blend', E2, \
+  A5, B5, C5 <> 'cats', D5, E5 <> 'Blend' \
+).
+rule( \
+  A3, B3, C3 <> 'cats', D3, E3 <> 'Blend', \
+  A2, B2, 'cats', D2 <> 'Blend', E2, \
+  A1, B1, C1 <> 'cats', 'Blend', E1, \
+  A4, B4, C4 <> 'cats', D4, E4 <> 'Blend', \
+  A5, B5, C5 <> 'cats', D5, E5 <> 'Blend' \
+).
+rule( \
+  A3, B3, C3 <> 'cats', D3, E3 <> 'Blend', \
+  A4, B4, C4 <> 'cats', D4, E4 <> 'Blend', \
+  A5, B5, C5 <> 'cats', D5, E5 <> 'Blend', \
+  A1, B1, C1 <> 'cats', 'Blend', E1, \
+  A2, B2, 'cats', D2 <> 'Blend', E2 \
+).
+rule( \
+  A3, B3, C3 <> 'cats', D3, E3 <> 'Blend', \
+  A4, B4, C4 <> 'cats', D4, E4 <> 'Blend', \
+  A2, B2, 'cats', D2 <> 'Blend', E2, \
+  A1, B1, C1 <> 'cats', 'Blend', E1, \
+  A5, B5, C5 <> 'cats', D5, E5 <> 'Blend' \
+).
+rule( \
+  A3, B3, C3 <> 'cats', D3, E3 <> 'Blend', \
+  A4, B4, C4 <> 'cats', D4, E4 <> 'Blend', \
+  A5, B5, C5 <> 'cats', D5, E5 <> 'Blend', \
+  A2, B2, 'cats', D2 <> 'Blend', E2, \
+  A1, B1, C1 <> 'cats', 'Blend', E1 \
+).
+
+# 11. The man who smokes Blue Masters drinks bier.
+rule( \
+  A1, B1, C1, 'Blue Masters', 'bier', \
+  A2, B2, C2, D2 <> 'Blue Masters', E2 <> 'bier', \
+  A3, B3, C3, D3 <> 'Blue Masters', E3 <> 'bier', \
+  A4, B4, C4, D4 <> 'Blue Masters', E4 <> 'bier', \
+  A5, B5, C5, D5 <> 'Blue Masters', E5 <> 'bier' \
+).
+rule( \
+  A2, B2, C2, D2 <> 'Blue Masters', E2 <> 'bier', \
+  A1, B1, C1, 'Blue Masters', 'bier', \
+  A3, B3, C3, D3 <> 'Blue Masters', E3 <> 'bier', \
+  A4, B4, C4, D4 <> 'Blue Masters', E4 <> 'bier', \
+  A5, B5, C5, D5 <> 'Blue Masters', E5 <> 'bier' \
+).
+rule( \
+  A2, B2, C2, D2 <> 'Blue Masters', E2 <> 'bier', \
+  A3, B3, C3, D3 <> 'Blue Masters', E3 <> 'bier', \
+  A1, B1, C1, 'Blue Masters', 'bier', \
+  A4, B4, C4, D4 <> 'Blue Masters', E4 <> 'bier', \
+  A5, B5, C5, D5 <> 'Blue Masters', E5 <> 'bier' \
+).
+rule( \
+  A2, B2, C2, D2 <> 'Blue Masters', E2 <> 'bier', \
+  A3, B3, C3, D3 <> 'Blue Masters', E3 <> 'bier', \
+  A4, B4, C4, D4 <> 'Blue Masters', E4 <> 'bier', \
+  A1, B1, C1, 'Blue Masters', 'bier', \
+  A5, B5, C5, D5 <> 'Blue Masters', E5 <> 'bier' \
+).
+rule( \
+  A2, B2, C2, D2 <> 'Blue Masters', E2 <> 'bier', \
+  A3, B3, C3, D3 <> 'Blue Masters', E3 <> 'bier', \
+  A4, B4, C4, D4 <> 'Blue Masters', E4 <> 'bier', \
+  A5, B5, C5, D5 <> 'Blue Masters', E5 <> 'bier', \
+  A1, B1, C1, 'Blue Masters', 'bier' \
+).
+
+# 12. The man who keeps horses lives next to the Dunhill smoker.
+rule( \
+  A1, B1, 'horses', D1 <> 'Dunhill', E1, \
+  A2, B2, C2 <> 'horses', 'Dunhill', E2, \
+  A3, B3, C3 <> 'horses', D3 <> 'Dunhill', E3, \
+  A4, B4, C4 <> 'horses', D4 <> 'Dunhill', E4, \
+  A5, B5, C5 <> 'horses', D5 <> 'Dunhill', E5 \
+).
+rule( \
+  A2, B2, C2 <> 'horses', 'Dunhill', E2, \
+  A1, B1, 'horses', D1 <> 'Dunhill', E1, \
+  A3, B3, C3 <> 'horses', D3 <> 'Dunhill', E3, \
+  A4, B4, C4 <> 'horses', D4 <> 'Dunhill', E4, \
+  A5, B5, C5 <> 'horses', D5 <> 'Dunhill', E5 \
+).
+rule( \
+  A3, B3, C3 <> 'horses', D3 <> 'Dunhill', E3, \
+  A1, B1, 'horses', D1 <> 'Dunhill', E1, \
+  A2, B2, C2 <> 'horses', 'Dunhill', E2, \
+  A4, B4, C4 <> 'horses', D4 <> 'Dunhill', E4, \
+  A5, B5, C5 <> 'horses', D5 <> 'Dunhill', E5 \
+).
+rule( \
+  A3, B3, C3 <> 'horses', D3 <> 'Dunhill', E3, \
+  A2, B2, C2 <> 'horses', 'Dunhill', E2, \
+  A1, B1, 'horses', D1 <> 'Dunhill', E1, \
+  A4, B4, C4 <> 'horses', D4 <> 'Dunhill', E4, \
+  A5, B5, C5 <> 'horses', D5 <> 'Dunhill', E5 \
+).
+rule( \
+  A3, B3, C3 <> 'horses', D3 <> 'Dunhill', E3, \
+  A4, B4, C4 <> 'horses', D4 <> 'Dunhill', E4, \
+  A1, B1, 'horses', D1 <> 'Dunhill', E1, \
+  A2, B2, C2 <> 'horses', 'Dunhill', E2, \
+  A5, B5, C5 <> 'horses', D5 <> 'Dunhill', E5 \
+).
+rule( \
+  A3, B3, C3 <> 'horses', D3 <> 'Dunhill', E3, \
+  A4, B4, C4 <> 'horses', D4 <> 'Dunhill', E4, \
+  A2, B2, C2 <> 'horses', 'Dunhill', E2, \
+  A1, B1, 'horses', D1 <> 'Dunhill', E1, \
+  A5, B5, C5 <> 'horses', D5 <> 'Dunhill', E5 \
+).
+rule( \
+  A3, B3, C3 <> 'horses', D3 <> 'Dunhill', E3, \
+  A4, B4, C4 <> 'horses', D4 <> 'Dunhill', E4, \
+  A5, B5, C5 <> 'horses', D5 <> 'Dunhill', E5, \
+  A1, B1, 'horses', D1 <> 'Dunhill', E1, \
+  A2, B2, C2 <> 'horses', 'Dunhill', E2 \
+).
+rule( \
+  A3, B3, C3 <> 'horses', D3 <> 'Dunhill', E3, \
+  A4, B4, C4 <> 'horses', D4 <> 'Dunhill', E4, \
+  A5, B5, C5 <> 'horses', D5 <> 'Dunhill', E5, \
+  A2, B2, C2 <> 'horses', 'Dunhill', E2, \
+  A1, B1, 'horses', D1 <> 'Dunhill', E1 \
+).
+
+# 13. The German smokes Prince.
+rule( \
+  'German', B1, C1, 'Prince', E1, \
+  A2 <> 'German', B2, C2, D2 <> 'Prince', E2, \
+  A3 <> 'German', B3, C3, D3 <> 'Prince', E3, \
+  A4 <> 'German', B4, C4, D4 <> 'Prince', E4, \
+  A5 <> 'German', B5, C5, D5 <> 'Prince', E5 \
+).
+rule( \
+  A2 <> 'German', B2, C2, D2 <> 'Prince', E2, \
+  'German', B1, C1, 'Prince', E1, \
+  A3 <> 'German', B3, C3, D3 <> 'Prince', E3, \
+  A4 <> 'German', B4, C4, D4 <> 'Prince', E4, \
+  A5 <> 'German', B5, C5, D5 <> 'Prince', E5 \
+).
+rule( \
+  A2 <> 'German', B2, C2, D2 <> 'Prince', E2, \
+  A3 <> 'German', B3, C3, D3 <> 'Prince', E3, \
+  'German', B1, C1, 'Prince', E1, \
+  A4 <> 'German', B4, C4, D4 <> 'Prince', E4, \
+  A5 <> 'German', B5, C5, D5 <> 'Prince', E5 \
+).
+rule( \
+  A2 <> 'German', B2, C2, D2 <> 'Prince', E2, \
+  A3 <> 'German', B3, C3, D3 <> 'Prince', E3, \
+  A4 <> 'German', B4, C4, D4 <> 'Prince', E4, \
+  'German', B1, C1, 'Prince', E1, \
+  A5 <> 'German', B5, C5, D5 <> 'Prince', E5 \
+).
+rule( \
+  A2 <> 'German', B2, C2, D2 <> 'Prince', E2, \
+  A3 <> 'German', B3, C3, D3 <> 'Prince', E3, \
+  A4 <> 'German', B4, C4, D4 <> 'Prince', E4, \
+  A5 <> 'German', B5, C5, D5 <> 'Prince', E5, \
+  'German', B1, C1, 'Prince', E1 \
+).
+
+# 14. The Norwegian lives next to the blue house.
+rule( \
+  'Norwegian', B1 <> 'blue', C1, D1, E1, \
+  A2 <> 'Norwegian', 'blue', C2, D2, E2, \
+  A3 <> 'Norwegian', B3 <> 'blue', C3, D3, E3, \
+  A4 <> 'Norwegian', B4 <> 'blue', C4, D4, E4, \
+  A5 <> 'Norwegian', B5 <> 'blue', C5, D5, E5 \
+).
+rule( \
+  A3 <> 'Norwegian', B3 <> 'blue', C3, D3, E3, \
+  'Norwegian', B1 <> 'blue', C1, D1, E1, \
+  A2 <> 'Norwegian', 'blue', C2, D2, E2, \
+  A4 <> 'Norwegian', B4 <> 'blue', C4, D4, E4, \
+  A5 <> 'Norwegian', B5 <> 'blue', C5, D5, E5 \
+).
+rule( \
+  A2 <> 'Norwegian', 'blue', C2, D2, E2, \
+  'Norwegian', B1 <> 'blue', C1, D1, E1, \
+  A3 <> 'Norwegian', B3 <> 'blue', C3, D3, E3, \
+  A4 <> 'Norwegian', B4 <> 'blue', C4, D4, E4, \
+  A5 <> 'Norwegian', B5 <> 'blue', C5, D5, E5 \
+).
+rule( \
+  A3 <> 'Norwegian', B3 <> 'blue', C3, D3, E3, \
+  A4 <> 'Norwegian', B4 <> 'blue', C4, D4, E4, \
+  'Norwegian', B1 <> 'blue', C1, D1, E1, \
+  A2 <> 'Norwegian', 'blue', C2, D2, E2, \
+  A5 <> 'Norwegian', B5 <> 'blue', C5, D5, E5 \
+).
+rule( \
+  A3 <> 'Norwegian', B3 <> 'blue', C3, D3, E3, \
+  A2 <> 'Norwegian', 'blue', C2, D2, E2, \
+  'Norwegian', B1 <> 'blue', C1, D1, E1, \
+  A4 <> 'Norwegian', B4 <> 'blue', C4, D4, E4, \
+  A5 <> 'Norwegian', B5 <> 'blue', C5, D5, E5 \
+).
+rule( \
+  A3 <> 'Norwegian', B3 <> 'blue', C3, D3, E3, \
+  A4 <> 'Norwegian', B4 <> 'blue', C4, D4, E4, \
+  A5 <> 'Norwegian', B5 <> 'blue', C5, D5, E5, \
+  'Norwegian', B1 <> 'blue', C1, D1, E1, \
+  A2 <> 'Norwegian', 'blue', C2, D2, E2 \
+).
+rule( \
+  A3 <> 'Norwegian', B3 <> 'blue', C3, D3, E3, \
+  A4 <> 'Norwegian', B4 <> 'blue', C4, D4, E4, \
+  A2 <> 'Norwegian', 'blue', C2, D2, E2, \
+  'Norwegian', B1 <> 'blue', C1, D1, E1, \
+  A5 <> 'Norwegian', B5 <> 'blue', C5, D5, E5 \
+).
+rule( \
+  A3 <> 'Norwegian', B3 <> 'blue', C3, D3, E3, \
+  A4 <> 'Norwegian', B4 <> 'blue', C4, D4, E4, \
+  A5 <> 'Norwegian', B5 <> 'blue', C5, D5, E5, \
+  A2 <> 'Norwegian', 'blue', C2, D2, E2, \
+  'Norwegian', B1 <> 'blue', C1, D1, E1 \
+).
+
+# 15. The Blend smoker has a neighbor who drinks water.
+rule( \
+  A1, B1, C1, 'Blend', E1 <> 'water', \
+  A2, B2, C2, D2 <> 'Blend', 'water', \
+  A3, B3, C3, D3 <> 'Blend', E3 <> 'water', \
+  A4, B4, C4, D4 <> 'Blend', E4 <> 'water', \
+  A5, B5, C5, D5 <> 'Blend', E5 <> 'water' \
+).
+rule( \
+  A3, B3, C3, D3 <> 'Blend', E3 <> 'water', \
+  A1, B1, C1, 'Blend', E1 <> 'water', \
+  A2, B2, C2, D2 <> 'Blend', 'water', \
+  A4, B4, C4, D4 <> 'Blend', E4 <> 'water', \
+  A5, B5, C5, D5 <> 'Blend', E5 <> 'water' \
+).
+rule( \
+  A2, B2, C2, D2 <> 'Blend', 'water', \
+  A1, B1, C1, 'Blend', E1 <> 'water', \
+  A3, B3, C3, D3 <> 'Blend', E3 <> 'water', \
+  A4, B4, C4, D4 <> 'Blend', E4 <> 'water', \
+  A5, B5, C5, D5 <> 'Blend', E5 <> 'water' \
+).
+rule( \
+  A3, B3, C3, D3 <> 'Blend', E3 <> 'water', \
+  A4, B4, C4, D4 <> 'Blend', E4 <> 'water', \
+  A1, B1, C1, 'Blend', E1 <> 'water', \
+  A2, B2, C2, D2 <> 'Blend', 'water', \
+  A5, B5, C5, D5 <> 'Blend', E5 <> 'water' \
+).
+rule( \
+  A3, B3, C3, D3 <> 'Blend', E3 <> 'water', \
+  A2, B2, C2, D2 <> 'Blend', 'water', \
+  A1, B1, C1, 'Blend', E1 <> 'water', \
+  A4, B4, C4, D4 <> 'Blend', E4 <> 'water', \
+  A5, B5, C5, D5 <> 'Blend', E5 <> 'water' \
+).
+rule( \
+  A3, B3, C3, D3 <> 'Blend', E3 <> 'water', \
+  A4, B4, C4, D4 <> 'Blend', E4 <> 'water', \
+  A5, B5, C5, D5 <> 'Blend', E5 <> 'water', \
+  A1, B1, C1, 'Blend', E1 <> 'water', \
+  A2, B2, C2, D2 <> 'Blend', 'water' \
+).
+rule( \
+  A3, B3, C3, D3 <> 'Blend', E3 <> 'water', \
+  A4, B4, C4, D4 <> 'Blend', E4 <> 'water', \
+  A2, B2, C2, D2 <> 'Blend', 'water', \
+  A1, B1, C1, 'Blend', E1 <> 'water', \
+  A5, B5, C5, D5 <> 'Blend', E5 <> 'water' \
+).
+rule( \
+  A3, B3, C3, D3 <> 'Blend', E3 <> 'water', \
+  A4, B4, C4, D4 <> 'Blend', E4 <> 'water', \
+  A5, B5, C5, D5 <> 'Blend', E5 <> 'water', \
+  A2, B2, C2, D2 <> 'Blend', 'water', \
+  A1, B1, C1, 'Blend', E1 <> 'water' \
+).
+
+# 16. Implicit rule: someone has a fish as a pet
+rule( \
+  A1, B1, 'fish', D1, E1, \
+  A2, B2, C2 <> 'fish', D2, E2, \
+  A3, B3, C3 <> 'fish', D3, E3, \
+  A4, B4, C4 <> 'fish', D4, E4, \
+  A5, B5, C5 <> 'fish', D5, E5 \
+).
+rule( \
+  A2, B2, C2 <> 'fish', D2, E2, \
+  A1, B1, 'fish', D1, E1, \
+  A3, B3, C3 <> 'fish', D3, E3, \
+  A4, B4, C4 <> 'fish', D4, E4, \
+  A5, B5, C5 <> 'fish', D5, E5 \
+).
+rule( \
+  A2, B2, C2 <> 'fish', D2, E2, \
+  A3, B3, C3 <> 'fish', D3, E3, \
+  A1, B1, 'fish', D1, E1, \
+  A4, B4, C4 <> 'fish', D4, E4, \
+  A5, B5, C5 <> 'fish', D5, E5 \
+).
+rule( \
+  A2, B2, C2 <> 'fish', D2, E2, \
+  A3, B3, C3 <> 'fish', D3, E3, \
+  A4, B4, C4 <> 'fish', D4, E4, \
+  A1, B1, 'fish', D1, E1, \
+  A5, B5, C5 <> 'fish', D5, E5 \
+).
+rule( \
+  A2, B2, C2 <> 'fish', D2, E2, \
+  A3, B3, C3 <> 'fish', D3, E3, \
+  A4, B4, C4 <> 'fish', D4, E4, \
+  A5, B5, C5 <> 'fish', D5, E5, \
+  A1, B1, 'fish', D1, E1 \
+).
+
+# 17. Implicit rule: someone has cats as pets
+rule( \
+  A1, B1, 'cats', D1, E1, \
+  A2, B2, C2 <> 'cats', D2, E2, \
+  A3, B3, C3 <> 'cats', D3, E3, \
+  A4, B4, C4 <> 'cats', D4, E4, \
+  A5, B5, C5 <> 'cats', D5, E5 \
+).
+rule( \
+  A2, B2, C2 <> 'cats', D2, E2, \
+  A1, B1, 'cats', D1, E1, \
+  A3, B3, C3 <> 'cats', D3, E3, \
+  A4, B4, C4 <> 'cats', D4, E4, \
+  A5, B5, C5 <> 'cats', D5, E5 \
+).
+rule( \
+  A2, B2, C2 <> 'cats', D2, E2, \
+  A3, B3, C3 <> 'cats', D3, E3, \
+  A1, B1, 'cats', D1, E1, \
+  A4, B4, C4 <> 'cats', D4, E4, \
+  A5, B5, C5 <> 'cats', D5, E5 \
+).
+rule( \
+  A2, B2, C2 <> 'cats', D2, E2, \
+  A3, B3, C3 <> 'cats', D3, E3, \
+  A4, B4, C4 <> 'cats', D4, E4, \
+  A1, B1, 'cats', D1, E1, \
+  A5, B5, C5 <> 'cats', D5, E5 \
+).
+rule( \
+  A2, B2, C2 <> 'cats', D2, E2, \
+  A3, B3, C3 <> 'cats', D3, E3, \
+  A4, B4, C4 <> 'cats', D4, E4, \
+  A5, B5, C5 <> 'cats', D5, E5, \
+  A1, B1, 'cats', D1, E1 \
+).
+
+# 18. Implicit rule: someone lives in a blue house
+rule( \
+  A1, 'blue', C1, D1, E1, \
+  A2, B2 <> 'blue', C2, D2, E2, \
+  A3, B3 <> 'blue', C3, D3, E3, \
+  A4, B4 <> 'blue', C4, D4, E4, \
+  A5, B5 <> 'blue', C5, D5, E5 \
+).
+rule( \
+  A2, B2 <> 'blue', C2, D2, E2, \
+  A1, 'blue', C1, D1, E1, \
+  A3, B3 <> 'blue', C3, D3, E3, \
+  A4, B4 <> 'blue', C4, D4, E4, \
+  A5, B5 <> 'blue', C5, D5, E5 \
+).
+rule( \
+  A2, B2 <> 'blue', C2, D2, E2, \
+  A3, B3 <> 'blue', C3, D3, E3, \
+  A1, 'blue', C1, D1, E1, \
+  A4, B4 <> 'blue', C4, D4, E4, \
+  A5, B5 <> 'blue', C5, D5, E5 \
+).
+rule( \
+  A2, B2 <> 'blue', C2, D2, E2, \
+  A3, B3 <> 'blue', C3, D3, E3, \
+  A4, B4 <> 'blue', C4, D4, E4, \
+  A1, 'blue', C1, D1, E1, \
+  A5, B5 <> 'blue', C5, D5, E5 \
+).
+rule( \
+  A2, B2 <> 'blue', C2, D2, E2, \
+  A3, B3 <> 'blue', C3, D3, E3, \
+  A4, B4 <> 'blue', C4, D4, E4, \
+  A5, B5 <> 'blue', C5, D5, E5, \
+  A1, 'blue', C1, D1, E1 \
+).
+
+# 19. Implicit rule: someone lives in a white house
+rule( \
+  A1, 'white', C1, D1, E1, \
+  A2, B2 <> 'white', C2, D2, E2, \
+  A3, B3 <> 'white', C3, D3, E3, \
+  A4, B4 <> 'white', C4, D4, E4, \
+  A5, B5 <> 'white', C5, D5, E5 \
+).
+rule( \
+  A2, B2 <> 'white', C2, D2, E2, \
+  A1, 'white', C1, D1, E1, \
+  A3, B3 <> 'white', C3, D3, E3, \
+  A4, B4 <> 'white', C4, D4, E4, \
+  A5, B5 <> 'white', C5, D5, E5 \
+).
+rule( \
+  A2, B2 <> 'white', C2, D2, E2, \
+  A3, B3 <> 'white', C3, D3, E3, \
+  A1, 'white', C1, D1, E1, \
+  A4, B4 <> 'white', C4, D4, E4, \
+  A5, B5 <> 'white', C5, D5, E5 \
+).
+rule( \
+  A2, B2 <> 'white', C2, D2, E2, \
+  A3, B3 <> 'white', C3, D3, E3, \
+  A4, B4 <> 'white', C4, D4, E4, \
+  A1, 'white', C1, D1, E1, \
+  A5, B5 <> 'white', C5, D5, E5 \
+).
+rule( \
+  A2, B2 <> 'white', C2, D2, E2, \
+  A3, B3 <> 'white', C3, D3, E3, \
+  A4, B4 <> 'white', C4, D4, E4, \
+  A5, B5 <> 'white', C5, D5, E5, \
+  A1, 'white', C1, D1, E1 \
+).
+
+# 20. Implicit rule: someone drinks water
+rule( \
+  A1, B1, C1, D1, 'water', \
+  A2, B2, C2, D2, E2 <> 'water', \
+  A3, B3, C3, D3, E3 <> 'water', \
+  A4, B4, C4, D4, E4 <> 'water', \
+  A5, B5, C5, D5, E5 <> 'water' \
+).
+rule( \
+  A2, B2, C2, D2, E2 <> 'water', \
+  A1, B1, C1, D1, 'water', \
+  A3, B3, C3, D3, E3 <> 'water', \
+  A4, B4, C4, D4, E4 <> 'water', \
+  A5, B5, C5, D5, E5 <> 'water' \
+).
+rule( \
+  A2, B2, C2, D2, E2 <> 'water', \
+  A3, B3, C3, D3, E3 <> 'water', \
+  A1, B1, C1, D1, 'water', \
+  A4, B4, C4, D4, E4 <> 'water', \
+  A5, B5, C5, D5, E5 <> 'water' \
+).
+rule( \
+  A2, B2, C2, D2, E2 <> 'water', \
+  A3, B3, C3, D3, E3 <> 'water', \
+  A4, B4, C4, D4, E4 <> 'water', \
+  A1, B1, C1, D1, 'water', \
+  A5, B5, C5, D5, E5 <> 'water' \
+).
+rule( \
+  A2, B2, C2, D2, E2 <> 'water', \
+  A3, B3, C3, D3, E3 <> 'water', \
+  A4, B4, C4, D4, E4 <> 'water', \
+  A5, B5, C5, D5, E5 <> 'water', \
+  A1, B1, C1, D1, 'water' \
+).
+
+# Now for our querying
+
+fishOwner(A1, B1, D1, E1) :- rule( \
+  A1, B1, 'fish', D1, E1, \
+  A2, B2, C2, D2, E2, \
+  A3, B3, C3, D3, E3, \
+  A4, B4, C4, D4, E4, \
+  A5, B5, C5, D5, E5 \
+).
+fishOwner(A2, B2, D2, E2) :- rule( \
+  A1, B1, C1, D1, E1, \
+  A2, B2, 'fish', D2, E2, \
+  A3, B3, C3, D3, E3, \
+  A4, B4, C4, D4, E4, \
+  A5, B5, C5, D5, E5 \
+).
+fishOwner(A3, B3, D3, E3) :- rule( \
+  A1, B1, C1, D1, E1, \
+  A2, B2, C2, D2, E2, \
+  A3, B3, 'fish', D3, E3, \
+  A4, B4, C4, D4, E4, \
+  A5, B5, C5, D5, E5 \
+).
+fishOwner(A4, B4, D4, E4) :- rule( \
+  A1, B1, C1, D1, E1, \
+  A2, B2, C2, D2, E2, \
+  A3, B3, C3, D3, E3, \
+  A4, B4, 'fish', D4, E4, \
+  A5, B5, C5, D5, E5 \
+).
+fishOwner(A5, B5, D5, E5) :- rule( \
+  A1, B1, C1, D1, E1, \
+  A2, B2, C2, D2, E2, \
+  A3, B3, C3, D3, E3, \
+  A4, B4, C4, D4, E4, \
+  A5, B5, 'fish', D5, E5 \
+).
+
+# listing
+
+fishOwner(nation, color, smokes, drinks)!
